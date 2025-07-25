@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import Sidebar from "./Sidebar";
