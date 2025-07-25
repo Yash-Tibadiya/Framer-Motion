@@ -7,12 +7,17 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-5">
         <Link href="/LectureOne">
           <Button>
-            <span>Lecture One</span>
+            <span>Lecture 1</span>
           </Button>
         </Link>
         <Link href="/LectureTwo">
           <Button>
-            <span>Lecture Two</span>
+            <span>Lecture 2</span>
+          </Button>
+        </Link>
+        <Link href="/LectureThree">
+          <Button>
+            <span>Lecture 3</span>
           </Button>
         </Link>
       </div>
