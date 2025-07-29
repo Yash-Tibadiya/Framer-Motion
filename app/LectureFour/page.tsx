@@ -1,7 +1,7 @@
 import Header from "./Header";
 import { Hero } from "./hero";
 
-export default function Home() {
+const LectureFour = () => {
   return (
     <>
       <Header />
@@ -10,4 +10,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default LectureFour;

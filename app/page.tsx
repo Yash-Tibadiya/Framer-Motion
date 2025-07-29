@@ -25,6 +25,11 @@ export default function Home() {
             <span>Lecture 4</span>
           </Button>
         </Link>
+        <Link href="/LectureFive">
+          <Button>
+            <span>Lecture 5</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );
