@@ -78,13 +78,13 @@ export function Hero() {
       </p>
       <div className="mb-10 mt-8 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row md:mb-20">
         <Link
-          href="#"
+          href="/LectureFour"
           className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-black p-px px-4 py-2 text-center text-sm font-semibold leading-6 text-white no-underline shadow-input transition duration-200 hover:-translate-y-0.5 sm:w-52"
         >
           Read Documentation
         </Link>
         <Link
-          href="/pricing"
+          href="/LectureFour"
           className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-gray-300 p-px px-4 py-2 text-sm font-semibold leading-6 text-black no-underline shadow-input transition duration-200 hover:-translate-y-0.5  sm:w-52"
         >
           Explore
