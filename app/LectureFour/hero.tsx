@@ -57,24 +57,29 @@ export function Hero() {
         }}
       />
 
-      <h2 className="text-balance relative z-30 mx-auto mb-4 mt-4 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700  md:text-7xl">
+      <h2 className="text-balance relative z-30 mx-auto mb-4 mt-4 max-w-4xl text-center tracking-tight text-gray-700 ">
         <Balancer>
-          Neon x Aceternity{" "}
-          <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-            <div className="text-black [text-shadow:0_0_rgba(0,0,0,0.1)]">
-              <span className="">Chatbot Template.</span>
+          <div className="flex font-bold flex-col text-3xl md:text-7xl">
+            Advanced{" "}
+            <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+              <div className="text-black [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                <span className="font-semibold text-2xl md:text-5xl">
+                  Database Solutions
+                </span>
+              </div>
             </div>
           </div>
         </Balancer>
       </h2>
-      <p className="relative z-30 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-600">
-        Chat with the latest AI models, embed chatbot into your website with
-        ease. Built in collaboration with Neon.tech and Aceternity
+      <p className="relative z-30 mx-auto mt-4 max-w-xl px-4 text-center text-lg/6 text-gray-600">
+        Empower your business with fast, secure, and scalable database services.
+        Our solutions drive growth, ensure integrity, and deliver seamless
+        performance.
       </p>
       <div className="mb-10 mt-8 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row md:mb-20">
         <Link
           href="#"
-          className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-black p-px px-4 py-2 text-center text-sm font-semibold leading-6 text-white no-underline transition duration-200  sm:w-52"
+          className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-black p-px px-4 py-2 text-center text-sm font-semibold leading-6 text-white no-underline shadow-input transition duration-200 hover:-translate-y-0.5 sm:w-52"
         >
           Read Documentation
         </Link>
