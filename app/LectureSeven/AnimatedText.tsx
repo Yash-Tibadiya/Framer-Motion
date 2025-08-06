@@ -1,7 +1,7 @@
 "use client";
 
 import { useAnimate, motion, stagger } from "framer-motion";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const AnimatedText = () => {
   const [scope, animate] = useAnimate();
