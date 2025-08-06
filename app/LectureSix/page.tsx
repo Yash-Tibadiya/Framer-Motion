@@ -1,9 +1,98 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+const useOutsideClick = (callback: () => void) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        callback();
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [callback]);
+
+  return ref;
+};
+
 const LectureSix = () => {
-  return <div className="py-40 bg-gray-100 min-h-screen">
-    <div className="max-w-lg mx-auto flex flex-col gap-10">
-      hello
+  const [current, setCurrent] = useState<Card | null>(null);
+  const ref = useOutsideClick(() => setCurrent(null));
+
+  return (
+    <div className="py-10 bg-gray-100 min-h-screen relative">
+      {current && (
+        <div
+          onClick={() => setCurrent(null)}
+          className="fixed inset-0 h-full w-full z-10 bg-black/50 backdrop-blur-sm"
+        ></div>
+      )}
+      {current && (
+        <div ref={ref} className="h-[600px] fixed inset-0 z-20 m-auto w-72 rounded-2xl border border-neutral-200 p-4 bg-white">
+          <img
+            src={current.src}
+            alt={current.title}
+            className="w-full aspect-square rounded-2xl"
+          />
+
+          <div className="flex flex-col justify-between items-start">
+            <div className="flex items-start justify-between py-4 w-full gap-2">
+              <div className="flex flex-col items-start gap-2">
+                <h2 className="text-lg text-black font-bold tracking-tight">
+                  {current.title}
+                </h2>
+                <p className="text-xs text-neutral-500">
+                  {current.description}
+                </p>
+              </div>
+              <Link
+                href={current.ctaLink}
+                className="px-2 py-1 rounded-full bg-green-500 text-white text-xs"
+              >
+                {current.ctaText}
+              </Link>
+            </div>
+
+            <div className="h-60 overflow-auto">{current.content()}</div>
+          </div>
+        </div>
+      )}
+      <div className="max-w-lg mx-auto flex flex-col gap-10">
+        {cards.map((card, idx) => (
+          <button
+            onClick={() => setCurrent(card)}
+            key={card.title}
+            className="p-4 rounded-lg flex justify-between items-center bg-white border border-neutral-200 cursor-pointer hover:bg-neutral-50"
+          >
+            <div className="flex gap-4 items-center justify-center">
+              <img
+                src={card.src}
+                alt={card.title}
+                className="h-16 aspect-square rounded-lg"
+              />
+              <div className="flex flex-col items-start justify-center gap-2">
+                <h2 className="text-lg text-black font-bold tracking-tight">
+                  {card.title}
+                </h2>
+                <p className="text-xs text-neutral-500">{card.description}</p>
+              </div>
+            </div>
+            <div className="px-2 py-1 rounded-full bg-green-500 text-white text-xs">
+              {card.ctaText}
+            </div>
+          </button>
+        ))}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default LectureSix;
@@ -12,8 +101,8 @@ type Card = {
   description: string;
   title: string;
   src: string;
-  catText: string;
-  catLink: string;
+  ctaText: string;
+  ctaLink: string;
   content: () => React.ReactNode;
 };
 
@@ -22,8 +111,8 @@ const cards: Card[] = [
     description: "lana del Rey",
     title: "Summertime Sadness",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    catText: "Play",
-    catLink: "/",
+    ctaText: "Play",
+    ctaLink: "/",
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
@@ -44,8 +133,8 @@ const cards: Card[] = [
     description: "Adele",
     title: "Hello",
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3mTb0vtBFf2E9w5C0Y2kCUe1vlgRHO3jSGh_SYRhs9z4FeF_tb2PTWcmAM2ONT3jKaww&usqp=CAU",
-    catText: "Play",
-    catLink: "/",
+    ctaText: "Play",
+    ctaLink: "/",
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
@@ -63,8 +152,8 @@ const cards: Card[] = [
     description: "Ed Sheeran",
     title: "Shape of You",
     src: "https://a10.gaanacdn.com/gn_img/albums/qa4WEkqKP1/a4WEdXr53P/size_m.webp",
-    catText: "Play",
-    catLink: "/",
+    ctaText: "Play",
+    ctaLink: "/",
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
@@ -82,8 +171,8 @@ const cards: Card[] = [
     description: "The Weeknd",
     title: "Blinding Lights",
     src: "https://http2.mlstatic.com/D_NQ_NP_851054-MLA79460463478_102024-O.webp",
-    catText: "Play",
-    catLink: "/",
+    ctaText: "Play",
+    ctaLink: "/",
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
@@ -100,9 +189,9 @@ const cards: Card[] = [
   {
     description: "Billie Eilish",
     title: "Bad Guy",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTReUTlvWPpB2PFIdQlW_VSOIhJDzldW2G7dVUHmRC7nGp055ZY6zYapEOiy_6Vc5gv_kI&usqp=CAU",
-    catText: "Play",
-    catLink: "/",
+    src: "https://m.media-amazon.com/images/I/61HGO-p3K8L._SY342_.jpg",
+    ctaText: "Play",
+    ctaLink: "/",
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
