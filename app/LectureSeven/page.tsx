@@ -1,6 +1,5 @@
 "use client";
 
-import AnimatedText from "./AnimatedText";
 import AnimationSequences from "./AnimationSequences";
 
 const LectureSeven = () => {

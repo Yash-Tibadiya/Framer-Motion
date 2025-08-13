@@ -113,7 +113,7 @@ const Card = () => {
                       360 days all around
                     </p>
                     <p className="text-[8px] text-neutral-400 mt-1">
-                      We're here to help you 24/7
+                      We&apos;re here to help you 24/7
                     </p>
                   </div>
                 </div>

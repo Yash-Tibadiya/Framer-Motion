@@ -186,9 +186,9 @@ const cards: Card[] = [
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
-          "Hello" by Adele is one of her most iconic hits, marking her return
+          &quot;Hello&quot; by Adele is one of her most iconic hits, marking her return
           after a long hiatus. The song is an emotional ballad about longing,
-          regret, and reconciliation. Adele's powerful and soulful voice carries
+          regret, and reconciliation. Adele&apos;s powerful and soulful voice carries
           the deep emotions of the lyrics, making it an unforgettable listening
           experience. It was a massive commercial success, topping the charts
           worldwide and earning multiple awards, including Grammys.
@@ -205,11 +205,11 @@ const cards: Card[] = [
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
-          "Shape of You" by Ed Sheeran is a catchy and upbeat song that became a
+          &quot;Shape of You&quot; by Ed Sheeran is a catchy and upbeat song that became a
           global phenomenon. With its infectious melody and danceable rhythm,
           the song became one of the best-selling digital singles of all time.
           The lyrics explore themes of love, attraction, and infatuation, and
-          Sheeran's heartfelt delivery adds an intimate touch to the otherwise
+          Sheeran&apos;s heartfelt delivery adds an intimate touch to the otherwise
           lighthearted track.
         </p>
       );
@@ -224,7 +224,7 @@ const cards: Card[] = [
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
-          "Blinding Lights" by The Weeknd is a synth-heavy, retro-inspired track
+          &quot;Blinding Lights&quot; by The Weeknd is a synth-heavy, retro-inspired track
           that quickly became one of his biggest hits. The song, with its 80s
           influence, blends contemporary pop with nostalgic elements, capturing
           a sense of longing and desire. Its infectious chorus and smooth
@@ -243,8 +243,8 @@ const cards: Card[] = [
     content: () => {
       return (
         <p className="text-[10px] text-neutral-500">
-          "Bad Guy" by Billie Eilish is an experimental pop song that blends
-          minimalist beats with a catchy and infectious hook. Eilish's breathy
+          &quot;Bad Guy&quot; by Billie Eilish is an experimental pop song that blends
+          minimalist beats with a catchy and infectious hook. Eilish&apos;s breathy
           vocals and playful delivery of the lyrics convey a sense of rebellion
           and self-assurance. The song became a massive hit, reaching the top of
           the charts and earning Eilish several awards, including Grammys for
